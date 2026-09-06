@@ -322,11 +322,27 @@
 
         // Environment Variables Injection Safeties
         const appId = typeof __app_id !== 'undefined' ? __app_id : 'demo-album-app';
-        let firebaseConfig = {};
+        
+        // ==========================================
+        // ⚠️ 請在這裡填入您的專屬 Firebase 設定 ⚠️
+        // ==========================================
+       
+const firebaseConfig = {
+  apiKey: "AIzaSyAVQpeQutUYHXW7vaeB0ohXxaiDAKAkZjA",
+  authDomain: "pcespic.firebaseapp.com",
+  projectId: "pcespic",
+  storageBucket: "pcespic.firebasestorage.app",
+  messagingSenderId: "382784241483",
+  appId: "1:382784241483:web:bbffd685a5986dfc0932ce",
+  measurementId: "G-DRWFF7F4VC"
+
+        };
+
+        // (這段 try-catch 保留不動，是為了相容目前的測試環境)
         try {
-            firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
-                /* Empty fallback just for syntax, real env will inject this */
-            };
+            if (typeof __firebase_config !== 'undefined') {
+                firebaseConfig = JSON.parse(__firebase_config);
+            }
         } catch (e) {
             console.error("Firebase config parsing error", e);
         }
