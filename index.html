@@ -279,7 +279,6 @@
             <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
                 <i class="fa-solid fa-lock text-teal-600"></i> 請輸入後台密碼
             </h3>
-            <p class="text-xs text-slate-500 mb-4">預設管理員密碼為：88888</p>
             <input type="password" id="adminPwdInput" class="block w-full border border-slate-300 rounded-lg py-2 px-3 focus:outline-none focus:ring-teal-500 focus:border-teal-500 mb-4" placeholder="請輸入密碼" onkeypress="if(event.key === 'Enter') verifyPassword()">
             <div id="pwdError" class="text-red-500 text-sm hidden mb-4">密碼錯誤，請重試。</div>
             <div class="flex justify-end gap-3">
@@ -326,16 +325,14 @@
         // ==========================================
         // ⚠️ 請在這裡填入您的專屬 Firebase 設定 ⚠️
         // ==========================================
-       
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-let firebaseConfig = {
-         apiKey: "AIzaSyAVQpeQutUYHXW7vaeB0ohXxaiDAKAkZjA",
-  authDomain: "pcespic.firebaseapp.com",
-  projectId: "pcespic",
-  storageBucket: "pcespic.firebasestorage.app",
-  messagingSenderId: "382784241483",
-  appId: "1:382784241483:web:bbffd685a5986dfc0932ce",
-  measurementId: "G-DRWFF7F4VC"
+        let firebaseConfig = {
+            // 請將 Firebase 控制台給您的設定貼在這裡取代這幾行註解，例如：
+            // apiKey: "AIzaSyxxxxxxxxxxxxxxx",
+            // authDomain: "your-project-123.firebaseapp.com",
+            // projectId: "your-project-123",
+            // storageBucket: "your-project-123.appspot.com",
+            // messagingSenderId: "123456789",
+            // appId: "1:123456789:web:abcdefg12345"
         };
 
         // (這段 try-catch 保留不動，是為了相容目前的測試環境)
